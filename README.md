@@ -1,6 +1,6 @@
 # Craft CMS AWS serverless image handler
 
-Generates image handle from inside twig from AWS serverless image handler solution. [More info](https://aws.amazon.com/solutions/serverless-image-handler/)
+Generates image handle from inside twig for AWS serverless image handler. [More info](https://aws.amazon.com/solutions/serverless-image-handler/)
 Automatically detects client webp support.
 
 
