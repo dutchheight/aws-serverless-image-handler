@@ -3,6 +3,7 @@
 Generates image handle from inside twig for AWS serverless image handler. [More info](https://aws.amazon.com/solutions/serverless-image-handler/)
 Automatically detects client webp support.
 
+![Flow](https://github.com/dutchheight/aws-serverless-image-handler/blob/master/resources/img/serverless.png "Flow")
 
 ## Requirements
 
