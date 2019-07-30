@@ -11,10 +11,10 @@
         "aws-serverless-image-handler"
     ],
     "support": {
-        "docs": "???",
-        "issues": "???"
+        "docs": "https://github.com/dutchheight/aws-serverless-image-handler",
+        "issues": "https://github.com/dutchheight/aws-serverless-image-handler"
     },
-    "license": "MIT",
+    "license": "proprietary",
     "authors": [
         {
             "name": "Dutch Height",
