@@ -1,0 +1,40 @@
+{
+    "name": "dutchheight/aws-serverless-image-handler",
+    "description": "Craft CMS plugin to generate resource URL",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "aws-serverless-image-handler"
+    ],
+    "support": {
+        "docs": "???",
+        "issues": "???"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dutch Height",
+            "homepage": "https://www.dutchheight.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "dutchheight\\awsserverlessimagehandler\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "aws-serverless-image-handler",
+        "handle": "aws-serverless-image-handler",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "???",
+        "class": "dutchheight\\awsserverlessimagehandler\\Awsserverlessimagehandler"
+    }
+}
