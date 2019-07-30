@@ -11,3 +11,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## 1.0.1 - 2019-07-30
 ### Changed
 - License
+
+## 1.0.2 - 2019-07-30
+### Added
+- Icons
+- Logo
