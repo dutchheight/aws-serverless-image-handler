@@ -1,19 +1,33 @@
 # Craft CMS AWS serverless image handler
 
-Generates base64 url to request images from AWS serverless image handler solution. [More info](https://aws.amazon.com/solutions/serverless-image-handler/)
+Generates image handle from inside twig for AWS serverless image handler. [More info](https://aws.amazon.com/solutions/serverless-image-handler/)
 Automatically detects client webp support.
 
+![Flow](https://github.com/dutchheight/aws-serverless-image-handler/blob/master/resources/img/serverless.png "Flow")
 
 ## Requirements
 
 - This plugin requires Craft CMS 3.0.0-beta.23 or later.
 - A working S3 volume is required. Use [Craft AWS S3](https://github.com/craftcms/aws-s3).
-- A working cloudformation stack [For more info an instuctions](https://aws.amazon.com/solutions/serverless-image-handler/).
+- A working cloudformation stack [For more info an instuctions](https://aws.amazon.com/solutions/serverless-image-handler/). (Instructions comming soon)
 
 ## Installation
 
-After setting up the S3 volume follow these instructions to install the plugin.
+### S3
 
+1. Install S3 volume plugin Use [Craft AWS S3](https://github.com/craftcms/aws-s3).
+
+2. Create a volume with the following settings:
+    - `Base URL` is your cloudfront url (*.cloudfront.net)
+    - `Access Key ID` is your IAM ID
+    - `Secret Access key` is your IAM secret key
+    - `Bucket name` is the name of your S3 bucket
+    - `Bucket region` the region for exaple us-east-1
+    - `Make Uploads Public` false
+    - `Focal point` false
+
+### AWS serverless image handler
+After setting up the S3 volume follow these instructions to install the plugin.
 1. Open your terminal and go to your Craft project:
 
         cd /path/to/project
@@ -39,7 +53,9 @@ In your twig template you can use:
 
 ```
 
-This will generate the propper URL for the asset. 
+This will generate the propper URL for the asset.
+
+If you load the image with `asset.url` the original source will be served.
 
 ### Availible settings
 | Properties | Values | Default |
