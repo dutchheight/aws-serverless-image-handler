@@ -16,3 +16,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### Added
 - Icons
 - Logo
+
+## 1.0.3 - 2019-08-07
+### Changed
+- Refactored focalpoint conversion

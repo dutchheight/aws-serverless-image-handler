@@ -29,29 +29,16 @@ class HelperService extends Component {
      */
     public function getFocalPoint($focalPoint)
     {
-        if (!empty($focalPoint)) {
-            if ($focalPoint['x'] < 0.33) {
-                $xPos = 'left';
-            } elseif ($focalPoint['x'] < 0.66) {
-                $xPos = 'center';
-            } else {
-                $xPos = 'right';
-            }
-            if ($focalPoint['y'] < 0.33) {
-                $yPos = 'top';
-            } elseif ($focalPoint['y'] < 0.66) {
-                $yPos = 'center';
-            } else {
-                $yPos = 'bottom';
-            }
-            $position = $xPos.' '.$yPos;
+        $position = [
+            0 => [0 => "left top",      1 => "top",         2 => "right top"],
+            1 => [0 => "left",          1 => "center",      2 => "right"],
+            2 => [0 => "left bottom",   1 => "bottom",      2 => "right bottom"]
+        ];
 
-            if (strpos($position, 'center') !== false) {
-                $position = 'center';
-            }
-        }
-        
-        return $position;
+        $xCord = round($focalPoint['x'] * 2);
+        $yCord = round($focalPoint['y'] * 2);
+
+        return $position[$yCord][$xCord];
     }
     
     /**

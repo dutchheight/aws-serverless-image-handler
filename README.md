@@ -69,5 +69,9 @@ If you load the image with `asset.url` the original source will be served.
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 Please make sure to update tests as appropriate.
 
+## Extra information
+For more info about AWS serverless image handler and other ways to use AWS SIH with Craft CMS take a look at:
+[Setting up your own image transform service](https://nystudio107.com/blog/setting-up-your-own-image-transform-service)
+
 ## License
 [Craft](https://craftcms.github.io/license/)
