@@ -104,7 +104,6 @@ class Awsserverlessimagehandler extends Plugin
             $event->types[] = ImageProperties::class;
         });
 
-        // Handler: CraftVariable::EVENT_INIT
         Event::on(
             CraftVariable::class,
             CraftVariable::EVENT_INIT,
@@ -115,7 +114,4 @@ class Awsserverlessimagehandler extends Plugin
             }
         );
     }
-
-    // AKIASDOSCJP7W2DXFNNH
-    // uszbYXUhP4dfTo76weI+oQLm2s/9MqK/B6du6N6J
 }
