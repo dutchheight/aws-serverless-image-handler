@@ -55,7 +55,7 @@ class Variable
 
         $json = [
             "bucket" => $image->getVolume()->bucket,
-            "key" => $image['filename'],
+            "key" => $image->getVolume()->subfolder ? $image->getVolume()->subfolder . "/" . $image['filename'] : $image['filename'],
             "edits" => [
                 "resize" => [
                     "width" => (isset($edits['width']) ? $edits['width'] : 800),
