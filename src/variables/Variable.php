@@ -54,7 +54,7 @@ class Variable
         }
 
         $json = [
-            "bucket" => "craft-image-processor-test-2",
+            "bucket" => $image->getVolume()->bucket,
             "key" => $image['filename'],
             "edits" => [
                 "resize" => [
