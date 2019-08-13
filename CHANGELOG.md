@@ -20,3 +20,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## 1.0.3 - 2019-08-07
 ### Changed
 - Refactored focalpoint conversion
+
+## 1.0.4 - 2019-08-13
+### Changed
+- Made bucked name dynamic
