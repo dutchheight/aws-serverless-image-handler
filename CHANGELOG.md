@@ -23,4 +23,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## 1.0.4 - 2019-08-13
 ### Changed
-- Made bucked name dynamic
+- Made bucked name dynamic @6ffaeff
+
+## 1.0.5 - 2019-08-13
+### Changed
+- Check for subfolders
