@@ -1,4 +1,5 @@
 # Craft CMS AWS serverless image handler
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 Generates image handle from inside twig for AWS serverless image handler. [More info](https://aws.amazon.com/solutions/serverless-image-handler/)
 Automatically detects client webp support.
@@ -75,3 +76,19 @@ For more info about AWS serverless image handler and other ways to use AWS SIH w
 
 ## License
 [Craft](https://craftcms.github.io/license/)
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table>
+  <tr>
+    <td align="center"><a href="https://andrewmeni.ch"><img src="https://avatars2.githubusercontent.com/u/29585821?v=4" width="100px;" alt="Andrew Menich"/><br /><sub><b>Andrew Menich</b></sub></a><br /><a href="https://github.com/dutchheight/aws-serverless-image-handler/commits?author=andrewmenich" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
