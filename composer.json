@@ -2,7 +2,7 @@
     "name": "dutchheight/aws-serverless-image-handler",
     "description": "Craft CMS plugin to generate resource URL",
     "type": "craft-plugin",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "keywords": [
         "craft",
         "cms",
