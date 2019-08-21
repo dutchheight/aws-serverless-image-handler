@@ -84,17 +84,17 @@ This will generate the propper URL for the asset.
 If you load the image with `asset.url` the original source will be served.
 
 ### Availible settings
-| Properties | Values | Default |
-|------------|--------|---------|
-|width       |`px`                                        |`800px`      |
-|height      |`px`                                        |`400px`      |
-|fit         |`cover`, `contain`, `fill`, `inside` or `outside`   |`cover`      |
-|position    |`top`, `right top`, `right`, `right bottom`, `bottom`, `left bottom`, `left` or `left top`   |`focalpoint`|
-|flip        |`true`, `false` | `false`|
+| Properties | Values | Default ||
+|------------|--------|---------||
+|width       |`px`                                        |`800px`      ||
+|height      |`px`                                        |`400px`      | Leave blank to keep ratio |
+|fit         |`cover`, `contain`, `fill`, `inside` or `outside`   |`cover`      ||
+|position    |`top`, `right top`, `right`, `right bottom`, `bottom`, `left bottom`, `left` or `left top`   |`focalpoint`||
+|flip        |`true`, `false` | `false`||
 |flop        |`true`, `false` | `false`|
-|rotation    |  Between `0` and `360` |`0`|
-|blur        |  Between `0.5` and `1000` |`0`|
-|greyscale   |`true`, `false` | `false`|
+|rotation    |  Between `0` and `360` |`0`||
+|blur        |  Between `0.5` and `1000` |`0`||
+|greyscale   |`true`, `false` | `false`||
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

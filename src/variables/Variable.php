@@ -59,14 +59,11 @@ class Variable
             "edits" => [
                 "resize" => [
                     "fit" => (isset($edits['fit']) ? $edits['fit'] : "cover"),
-                    "position" => (isset($edits['position']) ? $edits['position'] : Awsserverlessimagehandler::$plugin->getHelpers()->getFocalPoint($image->getFocalPoint()))
+                    "position" => (isset($edits['position']) ? $edits['position'] : Awsserverlessimagehandler::$plugin->getHelpers()->getFocalPoint($image->getFocalPoint())),
+                    "width" => (isset($edits['width'])) ? $edits['width'] : 1980 // TODO: make 1980px plugin setting
                 ]
             ]
         ];
-
-        if (isset($edits['width'])) {
-            $json["edits"]["resize"]["width"] = $edits['width'];
-        }
         
         if (isset($edits['height'])) {
             $json["edits"]["resize"]["height"] = $edits['height'];

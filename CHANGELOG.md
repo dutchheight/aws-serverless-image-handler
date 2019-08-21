@@ -39,3 +39,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ### Removed
 - Default size so the image keeps it ratio whenever there is no size supplied: issue #5
+
+## 1.1.1 - 2019-08-21
+- Added default width because x or y needs to be supplied. 
