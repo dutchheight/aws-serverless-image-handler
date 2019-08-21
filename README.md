@@ -84,14 +84,14 @@ This will generate the propper URL for the asset.
 If you load the image with `asset.url` the original source will be served.
 
 ### Availible settings
-| Properties | Values | Default ||
-|------------|--------|---------||
-|width       |`px`                                        |`800px`      ||
-|height      |`px`                                        |`400px`      | Leave blank to keep ratio |
+| Properties | Values | Default | Note |
+|------------|--------|---------|---------|
+|width       |px value in `number`                                        |`1980px`||
+|height      |px value in `number`                                        | `null`     | Leave blank to keep ratio |
 |fit         |`cover`, `contain`, `fill`, `inside` or `outside`   |`cover`      ||
 |position    |`top`, `right top`, `right`, `right bottom`, `bottom`, `left bottom`, `left` or `left top`   |`focalpoint`||
 |flip        |`true`, `false` | `false`||
-|flop        |`true`, `false` | `false`|
+|flop        |`true`, `false` | `false`||
 |rotation    |  Between `0` and `360` |`0`||
 |blur        |  Between `0.5` and `1000` |`0`||
 |greyscale   |`true`, `false` | `false`||
