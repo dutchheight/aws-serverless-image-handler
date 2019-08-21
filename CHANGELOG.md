@@ -28,3 +28,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## 1.0.5 - 2019-08-13
 ### Changed
 - Check for subfolders
+
+## 1.1.0 - 2019-08-21
+### Added
+- Flip, flop, rotation, blur, greyscale options
+
+### Changed
+- Field name from 'Image properties' to 'SIH Settings'
+- Readme with IAM policy.
+
+### Removed
+- Default size so the image keeps it ratio whenever there is no size supplied: issue #5

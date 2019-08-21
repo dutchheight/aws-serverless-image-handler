@@ -17,6 +17,31 @@ Automatically detects client webp support.
 ### S3
 
 1. Install S3 volume plugin Use [Craft AWS S3](https://github.com/craftcms/aws-s3).
+The following IAM Policy allow's craft to access your bucket:
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "s3:DeleteObject",
+                "s3:GetObject",
+                "s3:GetObjectAcl",
+                "s3:GetBucketLocation",
+                "s3:ListBucket",
+                "s3:PutObject",
+                "s3:PutObjectAcl"
+            ],
+            "Resource": [
+                "arn:aws:s3:::bucket-name/*",
+                "arn:aws:s3:::bucket-name"
+            ]
+        }
+    ]
+}
+```
 
 2. Create a volume with the following settings:
     - `Base URL` is your cloudfront url (*.cloudfront.net)
@@ -65,6 +90,11 @@ If you load the image with `asset.url` the original source will be served.
 |height      |`px`                                        |`400px`      |
 |fit         |`cover`, `contain`, `fill`, `inside` or `outside`   |`cover`      |
 |position    |`top`, `right top`, `right`, `right bottom`, `bottom`, `left bottom`, `left` or `left top`   |`focalpoint`|
+|flip        |`true`, `false` | `false`|
+|flop        |`true`, `false` | `false`|
+|rotation    |  Between `0` and `360` |`0`|
+|blur        |  Between `0.5` and `1000` |`0`|
+|greyscale   |`true`, `false` | `false`|
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

@@ -16,4 +16,5 @@
 return [
     'aws-serverless-image-handler plugin loaded' => 'aws-serverless-image-handler plugin loaded',
     'Toggle aws image processor' => 'Toggle aws image processor',
+    'SIH Settings' => 'SIH Settings'
 ];
