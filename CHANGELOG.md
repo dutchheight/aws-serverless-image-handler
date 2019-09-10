@@ -42,3 +42,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## 1.1.1 - 2019-08-21
 - Added default width because x or y needs to be supplied. 
+
+## 1.1.2 - 2019-09-10
+### Changed
+- Fixed installation issue in the migrations #6
