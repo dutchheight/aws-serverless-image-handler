@@ -1,4 +1,5 @@
 # Craft CMS AWS serverless image handler
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 Generates image handle from inside twig for AWS serverless image handler. [More info](https://aws.amazon.com/solutions/serverless-image-handler/)
 Automatically detects client webp support.
@@ -16,6 +17,31 @@ Automatically detects client webp support.
 ### S3
 
 1. Install S3 volume plugin Use [Craft AWS S3](https://github.com/craftcms/aws-s3).
+The following IAM Policy allow's craft to access your bucket:
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": [
+                "s3:DeleteObject",
+                "s3:GetObject",
+                "s3:GetObjectAcl",
+                "s3:GetBucketLocation",
+                "s3:ListBucket",
+                "s3:PutObject",
+                "s3:PutObjectAcl"
+            ],
+            "Resource": [
+                "arn:aws:s3:::bucket-name/*",
+                "arn:aws:s3:::bucket-name"
+            ]
+        }
+    ]
+}
+```
 
 2. Create a volume with the following settings:
     - `Base URL` is your cloudfront url (*.cloudfront.net)
@@ -58,12 +84,17 @@ This will generate the propper URL for the asset.
 If you load the image with `asset.url` the original source will be served.
 
 ### Availible settings
-| Properties | Values | Default |
-|------------|--------|---------|
-|width       |`px`                                        |`800px`      |
-|height      |`px`                                        |`400px`      |
-|fit         |`cover`, `contain`, `fill`, `inside` or `outside`   |`cover`      |
-|position    |`top`, `right top`, `right`, `right bottom`, `bottom`, `left bottom`, `left` or `left top`   |`focalpoint`|
+| Properties | Values | Default | Note |
+|------------|--------|---------|---------|
+|width       |px value in `number`                                        |`1980px`||
+|height      |px value in `number`                                        | `null`     | Leave blank to keep ratio |
+|fit         |`cover`, `contain`, `fill`, `inside` or `outside`   |`cover`      ||
+|position    |`top`, `right top`, `right`, `right bottom`, `bottom`, `left bottom`, `left` or `left top`   |`focalpoint`||
+|flip        |`true`, `false` | `false`||
+|flop        |`true`, `false` | `false`||
+|rotation    |  Between `0` and `360` |`0`||
+|blur        |  Between `0.5` and `1000` |`0`||
+|greyscale   |`true`, `false` | `false`||
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
@@ -75,3 +106,19 @@ For more info about AWS serverless image handler and other ways to use AWS SIH w
 
 ## License
 [Craft](https://craftcms.github.io/license/)
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table>
+  <tr>
+    <td align="center"><a href="https://andrewmeni.ch"><img src="https://avatars2.githubusercontent.com/u/29585821?v=4" width="100px;" alt="Andrew Menich"/><br /><sub><b>Andrew Menich</b></sub></a><br /><a href="https://github.com/dutchheight/aws-serverless-image-handler/commits?author=andrewmenich" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

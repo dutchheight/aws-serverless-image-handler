@@ -61,13 +61,36 @@ class Variable
             "key" => $volumeSubfolder ? $volumeSubfolder . "/" . $image['filename'] : $image['filename'],
             "edits" => [
                 "resize" => [
-                    "width" => (isset($edits['width']) ? $edits['width'] : 800),
-                    "height" => (isset($edits['height']) ? $edits['height'] : 400),
                     "fit" => (isset($edits['fit']) ? $edits['fit'] : "cover"),
-                    "position" => (isset($edits['position']) ? $edits['position'] : Awsserverlessimagehandler::$plugin->getHelpers()->getFocalPoint($image->getFocalPoint()))
+                    "position" => (isset($edits['position']) ? $edits['position'] : Awsserverlessimagehandler::$plugin->getHelpers()->getFocalPoint($image->getFocalPoint())),
+                    "width" => (isset($edits['width'])) ? $edits['width'] : 1980 // TODO: make 1980px plugin setting
                 ]
             ]
         ];
+        
+        if (isset($edits['height'])) {
+            $json["edits"]["resize"]["height"] = $edits['height'];
+        }
+        
+        if (isset($edits['flip'])) {
+            $json["edits"]["flip"] = $edits['flip'];
+        }
+        
+        if (isset($edits['flop'])) {
+            $json["edits"]["flop"] = $edits['flop'];
+        }
+
+        if (isset($edits['greyscale'])) {
+            $json["edits"]["greyscale"] = $edits['greyscale'];
+        }
+
+        if (isset($edits['rotate'])) {
+            $json["edits"]["rotate"] = $edits['rotate'];
+        }
+
+        if (isset($edits['blur']) && $edits['blur'] >= 0.3 && $edits['blur'] <= 1000) {
+            $json["edits"]["blur"] = $edits['blur'];
+        }
 
         // If client had webp support request webp version
         if ($allowWebP && Awsserverlessimagehandler::$plugin->getHelpers()->getClientWebPSupport()) {

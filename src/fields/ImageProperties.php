@@ -35,7 +35,7 @@ class ImageProperties extends Field implements PreviewableFieldInterface
      */
     public static function displayName(): string
     {
-        return Craft::t('app', 'Image properties');
+        return Craft::t('app', 'SIH Settings');
     }
 
     /**

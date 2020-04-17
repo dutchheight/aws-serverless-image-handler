@@ -5,7 +5,7 @@ use Craft;
 use craft\db\Migration;
 use craft\models\FieldGroup;
 use craft\base\Field;
-
+use craft\db\Table;
 use dutchheight\awsserverlessimagehandler\fields\ImageProperties;
 
 class Install extends Migration
@@ -18,7 +18,7 @@ class Install extends Migration
         
         $group = (new \craft\db\Query())
             ->select("id")
-            ->from("fieldgroups")
+            ->from(Table::FIELDGROUPS)
             ->where(["name" => "AWS Serverless Image Handler"])
             ->one();
 
@@ -33,7 +33,7 @@ class Install extends Migration
     {
         $group = (new \craft\db\Query())
             ->select("id")
-            ->from("fieldgroups")
+            ->from(Table::FIELDGROUPS)
             ->where(["name" => "AWS Serverless Image Handler"])
             ->one();
         Craft::$app->fields->deleteGroupById($group["id"]);

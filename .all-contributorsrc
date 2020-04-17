@@ -1,0 +1,23 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "andrewmenich",
+      "name": "Andrew Menich",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/29585821?v=4",
+      "profile": "https://andrewmeni.ch",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "aws-serverless-image-handler",
+  "projectOwner": "dutchheight",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
