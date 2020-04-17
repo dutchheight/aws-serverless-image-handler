@@ -46,3 +46,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## 1.1.2 - 2019-09-10
 ### Changed
 - Fixed installation issue in the migrations #6
+
+## 1.1.3 - 2020-04-17
+### Added
+- Add support for environment variables
