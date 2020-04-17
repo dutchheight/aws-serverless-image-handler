@@ -10,6 +10,7 @@
 
 namespace dutchheight\awsserverlessimagehandler\variables;
 
+use Craft;
 use craft\elements\Asset;
 
 use dutchheight\awsserverlessimagehandler\Awsserverlessimagehandler;
@@ -53,9 +54,11 @@ class Variable
             return $image->url;
         }
 
+        $volumeSubfolder = (Craft::parseEnv($image->getVolume()->subfolder) ?: $image->getVolume()->subfolder);
+
         $json = [
             "bucket" => $image->getVolume()->bucket,
-            "key" => ($image->getVolume()->subfolder ? $image->getVolume()->subfolder . "/" . $image['filename'] : $image['filename']),
+            "key" => $volumeSubfolder ? $volumeSubfolder . "/" . $image['filename'] : $image['filename'],
             "edits" => [
                 "resize" => [
                     "fit" => (isset($edits['fit']) ? $edits['fit'] : "cover"),
@@ -94,6 +97,6 @@ class Variable
             $json["edits"]["webp"] = [];
         }
 
-        echo $image->volume->url . base64_encode(json_encode($json));
+        echo (Craft::parseEnv($image->volume->url) ?: $image->volume->url) . base64_encode(json_encode($json));
     }
 }
