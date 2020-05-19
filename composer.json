@@ -32,7 +32,7 @@
     "extra": {
         "name": "aws-serverless-image-handler",
         "handle": "aws-serverless-image-handler",
-        "hasCpSettings": false,
+        "hasCpSettings": true,
         "hasCpSection": false,
         "changelogUrl": "???",
         "class": "dutchheight\\awsserverlessimagehandler\\Awsserverlessimagehandler"

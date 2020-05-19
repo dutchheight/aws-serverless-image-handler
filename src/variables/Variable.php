@@ -54,6 +54,7 @@ class Variable
             return $image->url;
         }
 
+        $distributionUrl = Awsserverlessimagehandler::$plugin->settings->serverlessDistributionURL;
         $volumeSubfolder = (Craft::parseEnv($image->getVolume()->subfolder) ?: $image->getVolume()->subfolder);
 
         $json = [
@@ -97,6 +98,6 @@ class Variable
             $json["edits"]["webp"] = [];
         }
 
-        echo (Craft::parseEnv($image->volume->url) ?: $image->volume->url) . base64_encode(json_encode($json));
+        echo (Craft::parseEnv($distributionUrl) ?: $distributionUrl) . base64_encode(json_encode($json));
     }
 }
