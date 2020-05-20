@@ -55,9 +55,9 @@ class Variable
         }
 
         $distributionSettingUrl = Craft::parseEnv(Awsserverlessimagehandler::$plugin->settings->serverlessDistributionURL);
-        $volumeUrl = (Craft::parseEnv($image->volume->url) ?: $image->volume->url);
+        $volumeUrl = Craft::parseEnv($image->volume->url);
         $distributionUrl = $distributionSettingUrl ?: $volumeUrl;
-        $volumeSubfolder = (Craft::parseEnv($image->getVolume()->subfolder) ?: $image->getVolume()->subfolder);
+        $volumeSubfolder = Craft::parseEnv($image->getVolume()->subfolder);
 
         $json = [
             "bucket" => $image->getVolume()->bucket,
