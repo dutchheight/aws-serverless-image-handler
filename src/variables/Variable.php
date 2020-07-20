@@ -61,7 +61,7 @@ class Variable
 
         $json = [
             "bucket" => $image->getVolume()->bucket,
-            "key" => $volumeSubfolder ? $volumeSubfolder . "/" . $image['filename'] : $image['filename'],
+            "key" => $volumeSubfolder ? $volumeSubfolder . "/" . $image->getPath() : $image->getPath(),
             "edits" => [
                 "resize" => [
                     "fit" => (isset($edits['fit']) ? $edits['fit'] : "cover"),
