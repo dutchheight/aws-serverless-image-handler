@@ -54,11 +54,14 @@ class Variable
             return $image->url;
         }
 
-        $volumeSubfolder = (Craft::parseEnv($image->getVolume()->subfolder) ?: $image->getVolume()->subfolder);
+        $distributionSettingUrl = Craft::parseEnv(Awsserverlessimagehandler::$plugin->settings->serverlessDistributionURL);
+        $volumeUrl = Craft::parseEnv($image->volume->url);
+        $distributionUrl = $distributionSettingUrl ?: $volumeUrl;
+        $volumeSubfolder = Craft::parseEnv($image->getVolume()->subfolder);
 
         $json = [
             "bucket" => $image->getVolume()->bucket,
-            "key" => $volumeSubfolder ? $volumeSubfolder . "/" . $image['filename'] : $image['filename'],
+            "key" => $volumeSubfolder ? $volumeSubfolder . "/" . $image->getPath() : $image->getPath(),
             "edits" => [
                 "resize" => [
                     "fit" => (isset($edits['fit']) ? $edits['fit'] : "cover"),
@@ -97,6 +100,6 @@ class Variable
             $json["edits"]["webp"] = [];
         }
 
-        echo (Craft::parseEnv($image->volume->url) ?: $image->volume->url) . base64_encode(json_encode($json));
+        echo $distributionUrl . base64_encode(json_encode($json));
     }
 }

@@ -2,7 +2,7 @@
     "name": "dutchheight/aws-serverless-image-handler",
     "description": "Craft CMS plugin to generate resource URL",
     "type": "craft-plugin",
-    "version": "1.1.3",
+    "version": "1.1.4",
     "keywords": [
         "craft",
         "cms",
@@ -32,7 +32,7 @@
     "extra": {
         "name": "aws-serverless-image-handler",
         "handle": "aws-serverless-image-handler",
-        "hasCpSettings": false,
+        "hasCpSettings": true,
         "hasCpSection": false,
         "changelogUrl": "???",
         "class": "dutchheight\\awsserverlessimagehandler\\Awsserverlessimagehandler"

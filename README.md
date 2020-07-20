@@ -66,6 +66,12 @@ After setting up the S3 volume follow these instructions to install the plugin.
 
 4. Add `Toggle aws image processor` to your s3 volume field layout.
 
+## Plugin Settings
+
+` Serverless Distribution URL ` (optional)
+
+This field is for the Serverless Image Handler CloudFront Distribution URL, which frees up your asset volume distribution URL to be a regular CloudFront distribution URL. This means that any asset in the volume that does not pass through this plugin (rich text fields, certain SEO plugins, etc) will be served normally. 
+
 ## Usage
 
 In your twig template you can use:

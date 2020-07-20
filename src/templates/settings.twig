@@ -1,0 +1,12 @@
+{% import "_includes/forms" as forms %}
+
+{{ forms.autosuggestField({
+    label: 'Serverless Distribution URL',
+    instructions: 'Enter your AWS Serverless Image Handler CloudFront Distribution URL here.',
+    name: 'serverlessDistributionURL', 
+    id: 'serverlessDistributionURL', 
+    required: false,
+    value: settings.serverlessDistributionURL,
+    suggestEnvVars: true,
+    suggestAliases: true,
+}) }}

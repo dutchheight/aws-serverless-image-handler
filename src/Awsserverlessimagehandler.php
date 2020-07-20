@@ -23,7 +23,7 @@ use craft\events\RegisterComponentTypesEvent;
 
 use craft\web\twig\variables\CraftVariable;
 
-
+use dutchheight\awsserverlessimagehandler\models\Settings;
 use dutchheight\awsserverlessimagehandler\fields\ImageProperties;
 use dutchheight\awsserverlessimagehandler\variables\Variable;
 use dutchheight\awsserverlessimagehandler\services\HelperService;
@@ -54,6 +54,11 @@ class Awsserverlessimagehandler extends Plugin
      */
     public $schemaVersion = '1.0.0';
 
+    /**
+     * @var bool
+     */
+    public $hasCpSettings = true;
+
     // Public Methods
     // =========================================================================
 
@@ -82,7 +87,7 @@ class Awsserverlessimagehandler extends Plugin
 
     // Protected Methods
     // =========================================================================
-    
+
     protected function registerComponents() {
         $this->setComponents([
             'helpers' => HelperService::class
@@ -112,6 +117,21 @@ class Awsserverlessimagehandler extends Plugin
                 $variable = $event->sender;
                 $variable->set('awsserverlessimagehandler', Variable::class);
             }
+        );
+    }
+
+    protected function createSettingsModel()
+    {
+        return new Settings();
+    }
+
+    protected function settingsHtml()
+    {
+        return Craft::$app->view->renderTemplate(
+            'aws-serverless-image-handler/settings',
+            [
+            'settings' => $this->getSettings()
+            ]
         );
     }
 }
